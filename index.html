@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <article>
+
+    <header>
+
+      <p class="title">
+
+        Learn to code by watching others
+
+      </p>
+
+      <p class="intro">
+
+        See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+        but understanding how developers think is invaluable.
+
+      </p>
+
+    </header>
+
+    <main>
+
+      <aside>
+
+        <span> Try it free 7 days </span> then $20/mo. thereafter
+
+      </aside>
+
+      <form action="">
+
+        <div class="first-name">
+
+          <input type="text" name="firstName" id="first-name" placeholder="First Name" autocomplete="off">
+
+        </div>
+
+        <label for="first-name" class="hidden"> First Name cannot be empty </label>
+
+        <div class="last-name">
+
+          <input type="text" name="lastName" id="last-name" placeholder="Last Name" autocomplete="off">
+
+        </div>
+
+        <label for="last-name" class="hidden"> Last Name cannot be empty! </label>
+
+        <div class="email">
+
+          <input type="text" name="email" id="email" placeholder="Email Address" autocomplete="off">
+
+        </div>
+
+        <label for="email" class="hidden"> Looks like this is not an email </label>
+
+        <div class="password">
+
+          <input type="password" name="password" id="password" placeholder="Password" autocomplete="off">
+
+        </div>
+
+        <label for="password" class="hidden"> Password cannot be empty </label>
+
+        <input type="submit" value="Claim your free trial" id="submit">
+
+        <footer>
+
+          By clicking the button, you are agreeing to our <span> Terms and Services </span>
+  
+        </footer>
+
+      </form>
+
+    </main>
+
+  </article>
+  
+  
+  <script src="app.js"></script>
+
+</body>
+</html>
