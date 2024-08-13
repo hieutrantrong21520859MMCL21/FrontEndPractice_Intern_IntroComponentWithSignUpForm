@@ -77,6 +77,7 @@ main form div {
 }
 
 main form input {
+    outline: none;
     border-width: 0.2px;
     border-radius: 5px;
     border-style: solid;
@@ -84,7 +85,7 @@ main form input {
     padding-bottom: 15px;
     padding-left: 15px;
 
-    font-family: 'Poppins', sans-serif;
+    font-family: inherit;
     font-weight: 700;
 }
 
@@ -96,7 +97,7 @@ main form div input:focus {
     border-color: var(--color_grayish_blue);
 }
 
-main form div[class*='invalid']::after {
+/* main form div[class*='invalid']::after {
     content: url(./images/icon-error.svg);
     width: 24px;
     height: 24px;
@@ -110,11 +111,16 @@ main form div[class*='invalid'] input {
     border-width: 2px;
     border-color: var(--color_red);
     color: var(--color_red);
+} */
+
+main form div input:invalid:focus {
+    border-color: var(--color_red);
+    color: var(--color_red);
 }
 
-main form div[class*='invalid'] input::placeholder {
+/* main form div[class*='invalid'] input::placeholder {
     opacity: 0;
-}
+} */
 
 main form label {
     font-size: 12px;
@@ -157,9 +163,9 @@ main form footer span {
     font-weight: 700;
 }
 
-.hidden {
+/* .hidden {
     display: none;
-}
+} */
 
 @media screen and (min-width: 768px) {
     body {
