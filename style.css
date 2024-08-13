@@ -97,30 +97,10 @@ main form div input:focus {
     border-color: var(--color_grayish_blue);
 }
 
-/* main form div[class*='invalid']::after {
-    content: url(./images/icon-error.svg);
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 5%;
-}
-
-main form div[class*='invalid'] input {
-    border-width: 2px;
-    border-color: var(--color_red);
-    color: var(--color_red);
-} */
-
 main form div input:invalid:focus {
     border-color: var(--color_red);
     color: var(--color_red);
 }
-
-/* main form div[class*='invalid'] input::placeholder {
-    opacity: 0;
-} */
 
 main form label {
     font-size: 12px;
@@ -162,10 +142,6 @@ main form footer span {
     color: var(--color_red);
     font-weight: 700;
 }
-
-/* .hidden {
-    display: none;
-} */
 
 @media screen and (min-width: 768px) {
     body {
