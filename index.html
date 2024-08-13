@@ -44,7 +44,7 @@
 
       </aside>
 
-      <form action="">
+      <form action="" novalidate>
 
         <div class="first-name">
 
@@ -61,6 +61,8 @@
 
         </div>
 
+        <label for="first-name" class="hidden"> First Name cannot be empty </label>
+
         <div class="last-name">
 
           <input
@@ -75,6 +77,8 @@
           >
 
         </div>
+
+        <label for="last-name" class="hidden"> Last Name cannot be empty! </label>
 
         <div class="email">
 
@@ -91,6 +95,8 @@
 
         </div>
 
+        <label for="email" class="hidden"> Looks like this is not an email </label>
+
         <div class="password">
 
           <input
@@ -104,6 +110,8 @@
           >
 
         </div>
+
+        <label for="password" class="hidden"> Password cannot be empty </label>
 
         <input type="submit" value="Claim your free trial" id="submit">
 
