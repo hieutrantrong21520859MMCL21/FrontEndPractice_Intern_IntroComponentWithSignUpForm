@@ -102,15 +102,6 @@ main form div input:invalid:focus {
     color: var(--color_red);
 }
 
-main form label {
-    font-size: 12px;
-    font-style: italic;
-    color: var(--color_red);
-    font-weight: 500;
-
-    align-self: flex-end;
-}
-
 main form #submit {
     background-color: var(--color_green);
     color: white;
