@@ -9,30 +9,6 @@ form.addEventListener("submit", function (event) {
     let isValid = true;
 
     switch (input.id) {
-      // case 'first-name':
-      // case 'last-name':
-      //   if (input.validity.valueMissing || input.validity.tooShort || input.validity.tooLong)
-      //   {
-      //     isValid = false;
-      //   }
-
-      //   break;
-
-      // case 'email':
-      //   if (input.validity.typeMismatch || input.validity.valueMissing || input.validity.tooShort || input.validity.tooLong)
-      //   {
-      //     isValid = false;
-      //   }
-
-      //   break;
-
-      // case 'password':
-      //   if (input.validity.patternMismatch || input.validity.valueMissing)
-      //   {
-      //     isValid = false;
-      //   }
-
-      //   break;
       case 'first-name':
         if (input.validity.valueMissing)
         {
@@ -71,6 +47,8 @@ form.addEventListener("submit", function (event) {
           isValid = false;
           input.nextElementSibling.textContent = "Last Name's length must be at most 30 characters";
         }
+
+        break;
 
       case 'email':
         if (input.validity.valueMissing)
@@ -115,23 +93,6 @@ form.addEventListener("submit", function (event) {
         break;
     }
 
-    // if (!isValid) {
-    //   // Show error
-    //   input.parentElement.classList.add('invalid');
-
-    //   for (const label of input.labels) {
-    //     label.classList.remove('hidden');
-    //   }
-
-    //   isFormValid = false;
-    // } else {
-    //   // Hide error
-    //   input.parentElement.classList.remove('invalid');
-
-    //   for (const label of input.labels) {
-    //     label.classList.add('hidden');
-    //   }
-    // }
     if (!isValid) {
       // Show error
       input.parentElement.classList.add('invalid');
