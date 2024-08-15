@@ -2,9 +2,6 @@ const form = document.querySelector("article main form");
 const inputs = document.querySelectorAll("article main form input[id]");
 const input = document.getElementById('email');
 
-// const pattern =
-//   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
 form.addEventListener("submit", function (event) {
   let isFormValid = true;
 
@@ -12,63 +9,141 @@ form.addEventListener("submit", function (event) {
     let isValid = true;
 
     switch (input.id) {
-      // case "first-name":
-      // case "last-name":
-      // case "password":
-      //   if (!input.value) {
+      // case 'first-name':
+      // case 'last-name':
+      //   if (input.validity.valueMissing || input.validity.tooShort || input.validity.tooLong)
+      //   {
       //     isValid = false;
       //   }
 
       //   break;
 
-      // case "email":
-      //   if (!input.value.match(pattern)) {
+      // case 'email':
+      //   if (input.validity.typeMismatch || input.validity.valueMissing || input.validity.tooShort || input.validity.tooLong)
+      //   {
+      //     isValid = false;
+      //   }
+
+      //   break;
+
+      // case 'password':
+      //   if (input.validity.patternMismatch || input.validity.valueMissing)
+      //   {
       //     isValid = false;
       //   }
 
       //   break;
       case 'first-name':
-      case 'last-name':
-        if (input.validity.valueMissing || input.validity.tooShort || input.validity.tooLong)
+        if (input.validity.valueMissing)
         {
           isValid = false;
+          input.nextElementSibling.textContent = 'First Name cannot be empty';
+        }
+
+        else if (input.validity.tooShort)
+        {
+          isValid = false;
+          input.nextElementSibling.textContent = "First Name's length must be at least 3 characters";
+        }
+
+        else if (input.validity.tooLong)
+        {
+          input.nextElementSibling.textContent = "First Name's length must be at most 30 characters";
         }
 
         break;
-
-      case 'email':
-        if (input.validity.typeMismatch || input.validity.valueMissing || input.validity.tooShort || input.validity.tooLong)
+      
+      case 'last-name':
+        if (input.validity.valueMissing)
         {
           isValid = false;
+          input.nextElementSibling.textContent = 'Last Name cannot be empty';
+        }
+  
+        else if (input.validity.tooShort)
+        {
+          isValid = false;
+          input.nextElementSibling.textContent = "Last Name's length must be at least 3 characters";
+        }
+  
+        else if (input.validity.tooLong)
+        {
+          isValid = false;
+          input.nextElementSibling.textContent = "Last Name's length must be at most 30 characters";
+        }
+
+      case 'email':
+        if (input.validity.valueMissing)
+        {
+          isValid = false;
+          input.nextElementSibling.textContent = 'Email cannot be empty';
+        }
+
+        else if (input.validity.typeMismatch)
+        {
+          isValid = false;
+          input.nextElementSibling.textContent = 'Looks like this is not an email';
+        }
+
+        else if (input.validity.tooShort)
+        {
+          isValid = false;
+          input.nextElementSibling.textContent = "Email's length must be at least 3 characters";
+        }
+
+        else if (input.validity.tooLong)
+        {
+          isValid = false;
+          input.nextElementSibling.textContent = "Email's length must be at most 200 characters";
         }
 
         break;
 
       case 'password':
-        if (input.validity.patternMismatch || input.validity.valueMissing)
+        if (input.validity.valueMissing)
         {
           isValid = false;
+          input.nextElementSibling.textContent = 'Password cannot be empty';
+        }
+
+        else if (input.validity.patternMismatch)
+        {
+          isValid = false;
+          input.nextElementSibling.textContent = 'Password does not match the format';
         }
 
         break;
     }
 
+    // if (!isValid) {
+    //   // Show error
+    //   input.parentElement.classList.add('invalid');
+
+    //   for (const label of input.labels) {
+    //     label.classList.remove('hidden');
+    //   }
+
+    //   isFormValid = false;
+    // } else {
+    //   // Hide error
+    //   input.parentElement.classList.remove('invalid');
+
+    //   for (const label of input.labels) {
+    //     label.classList.add('hidden');
+    //   }
+    // }
     if (!isValid) {
       // Show error
       input.parentElement.classList.add('invalid');
 
-      for (const label of input.labels) {
-        label.classList.remove('hidden');
-      }
+      input.nextElementSibling.classList.remove('hidden');
 
       isFormValid = false;
     } else {
       // Hide error
       input.parentElement.classList.remove('invalid');
 
-      for (const label of input.labels) {
-        label.classList.add('hidden');
-      }
+      input.nextElementSibling.classList.add('hidden');
     }
   });
 
